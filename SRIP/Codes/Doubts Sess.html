@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial;}
+
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+</style>
+</head>
+<body>
+   <div class="header">
+  <h1>Doubts Session</h1>
+  <p>Learn,Share and Build</p>
+  
+</div> 
+
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+  <button class="tablinks" onclick="openTab(event, 'Answered Questions')">Answered Questions</button>
+  <button class="tablinks" onclick="openTab(event, 'Search')">Search</button>
+  <button class="tablinks" onclick="openTab(event, 'Login')">Login</button>
+  <button class="tablinks" onclick="openTab(event, 'Sign In')">Sign In</button>
+</div>
+
+<div id="Home" class="tabcontent">
+   <p>Post Your Doubts Here:</p>
+    <form action="//www.html.am/html-codes/forms/html-form-tag-action.cfm" target="result" method="get">
+<textarea rows="12" cols="100" maxlength="300" name="msg">
+</textarea>
+<br>
+<input type="submit" value="Submit">
+
+</form>
+  
+</div>
+
+<div id="Answered Questions" class="tabcontent">
+<h2> Login or Sign in to Post your Doubts</h2>  
+</div>
+
+<div id="Search" class="tabcontent">
+  <form>
+  <input type="text" name="search" placeholder="Search..">
+</form>
+
+<div id="Login" class="tabcontent">
+  </div>
+
+<div id="Sign In" class="tabcontent">
+   
+  </div>
+
+  
+</div>
+
+
+
+<script>
+function openTab(evt, TabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(TabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
