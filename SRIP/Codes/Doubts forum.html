@@ -85,10 +85,9 @@ input[type=text]:focus {
 
 <div class="tab">
   <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
-  <button class="tablinks" onclick="openTab(event, 'Answered Questions')">Answered Questions</button>
+  <button class="tablinks" onclick="openTab(event, 'Ask Question')">Ask Question</button>
   <button class="tablinks" onclick="openTab(event, 'Search')">Search</button>
-  <button class="tablinks" onclick="openTab(event, 'Register')">Register form</button>
-  <button class="tablinks" onclick="openTab(event, 'Login')">Login form</button>
+  <button class="tablinks" onclick="openTab(event, 'Sign Up')">Sign Up</button>
 </div>
 
 <div id="Home" class="tabcontent">
@@ -258,17 +257,66 @@ body {
   
   
 </div>
+
   
 </div>
 
-<div id="Answered Questions" class="tabcontent">
-<h2> Login or Sign in to Post your Doubts</h2> 
-<p>Post Your Doubts Here:</p>
-    <form action="//www.html.am/html-codes/forms/html-form-tag-action.cfm" target="result" method="get">
-<textarea rows="12" cols="100" maxlength="300" name="msg">
+<div id="Ask Question" class="tabcontent">
+<h2>Login or Sign in to Post your Doubts</h2> 
+<style>
+body {
+  font-family: Arial;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<div class="container">
+  <form action="/action_page.php">
+    <label for="fname">Github Handle</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Password</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+<h2>Post Your Doubts:</h2><br>
+<textarea name="comments" rows="15" cols="100" wrap="soft">
 </textarea>
-<br>
-<input type="submit" value="Submit">
 
 </form>
 
@@ -364,13 +412,151 @@ button:hover {
 </div>
 
 <div id="Search" class="tabcontent">
-  <form>
-  <input type="text" name="search" placeholder="Search..">
-</form>
+  
+<style>
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc; 
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+</style>
+</head>
+<body>
+
+<button class="accordion">Tags</button>
+<div class="panel">
+  <h3> Filter by tags</h3>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Tags.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#">Java</a></li>
+  <li><a href="#">Javascript</a></li>
+  <li><a href="#">json</a></li>
+  <li><a href="#">jquery</a></li>
+
+  <li><a href="#">CSS</a></li>
+  <li><a href="#">c++</a></li>
+  <li><a href="#">C</a></li>
+
+  <li><a href="#">python</a></li>
+  <li><a href="#">php</a></li>
+  
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</div>
+
+<button class="accordion">Users</button>
+<div class="panel">
+<h3> Filter by Users</h3>
 
 </div>
 
-<div id="Register" class="tabcontent">
+<button class="accordion">All Questions</button>
+<div class="panel">
+  
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+</body>
+
+</div>
+
+<div id="Sign Up" class="tabcontent">
 <style>
 body {
   font-family: Arial;
@@ -424,60 +610,6 @@ div.container {
 </body>
 
 </div>
-
-<div id="Login Form" class="tabcontent">
-<style>
-body {
-  font-family: Arial;
-}
-
-input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
-div.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-</style>
-<body>
-
-<div class="container">
-  <form action="/action_page.php">
-    <label for="fname">Github Handle</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-    <label for="lname">Password</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-  
-    <input type="submit" value="Submit">
-  </form>
-</div>
-
-</body>
-  </div>
 
 <script>
 // Get the modal
@@ -657,8 +789,107 @@ q {font-style: italic;}
 <body>
 
 
-
 <div class="footer">
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+</style>
+</head>
+<body>
+
+<button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Chat</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
   <p>Doubts Session</p>
   <p>A computer science portal for doubts</p>
 
